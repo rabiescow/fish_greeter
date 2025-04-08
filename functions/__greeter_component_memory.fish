@@ -1,7 +1,7 @@
 function __greeter_component_memory
   set -l mem_tot (cat /proc/meminfo | grep MemTotal | sed 's/MemTotal:[ ]*\(.*\) kB/scale=2;\1\/1000000/' | bc)
   set -l mem_use (cat /proc/meminfo | grep 'Active:' | sed 's/Active:[ ]*\(.*\) kB/scale=2;\1\/1000000/' | bc)
-  set -l mem_proc (string join '' 'scale=1;(' $mem_use '/' $mem_tot ')*100' | bc)
+  set -l mem_proc (string join '' 'scale=3;(' $mem_use '/' $mem_tot ')*100' | bc)
   set -l memory (string join '' $mem_use 'GiB / ' $mem_tot 'GiB (' $mem_proc ' %)')
 
 
