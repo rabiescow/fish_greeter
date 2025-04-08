@@ -1,4 +1,5 @@
 function greeter_clear_config -d "clear greeter configuration"
+  set -eU greeter_logo_path
   set -eU greeter_line_color
   set -eU greeter_line
   set -eU greeter_newline
