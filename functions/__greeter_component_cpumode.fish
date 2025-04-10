@@ -1,5 +1,5 @@
 function __greeter_component_cpumode
-  set -l cpu_mode (cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
+  set -l cpumode (cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
 
   __greeter_util_set greeter_cpumode_space '                 '
   __greeter_util_set greeter_cpumode_icon_color "#878787"

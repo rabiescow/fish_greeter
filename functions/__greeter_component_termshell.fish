@@ -1,4 +1,4 @@
-function __greeter_component_terminal
+function __greeter_component_termshell
   set -l term $TERM
   set -l shell ($SHELL --version)
 
@@ -12,6 +12,8 @@ function __greeter_component_terminal
   __greeter_util_set greeter_terminal_separator " ➜ "
   __greeter_util_set greeter_terminal_value_color "#878787"
   __greeter_util_set greeter_terminal_value $term
+  __greeter_util_set greeter_shell_prefix " :: "
+  __greeter_util_set greeter_shell_value $shell
 
   set_color  normal
   echo -ens  $greeter_terminal_space
@@ -24,7 +26,9 @@ function __greeter_component_terminal
   set_color  $greeter_terminal_separator_color
   echo -ens  $greeter_terminal_separator
   set_color  $greeter_terminal_value_color
-  echo       $greeter_terminal_value
+  echo -ens  $greeter_terminal_value
+  echo -ens  $greeter_shell_prefix
+  echo       $greeter_shell_value
   set_color  normal
 
 end
