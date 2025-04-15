@@ -1,9 +1,9 @@
 function __greeter_component_uptime
-  set -l secs (uptime --raw | sed 's/^[0-9]\{10\} \([0-9]*\.[0-9]\{6\}\) [0-9]\{1\} [0-1]\{1\}\.[0-9]\{2\} [0-1]\\{1\\}\\.[0-9]\\{2\\} [0-1]\\{1\\}\\.[0-9]\\{2\\}.*/\1/')
+  set -l secs (uptime --raw | sed 's/^[0-9]\{10\} \([0-9]*\.[0-9]\{6\}\) [0-9]\{1\} [0-9]*\.[0-9]\{2\} [0-9]*\.[0-9]\{2\} [0-9]*\.[0-9]\{2\}.*/\1/')
   set secs (echo "scale=0;($secs / 1)" | bc)
   set -l days (echo "scale=0;($secs / 86400)" | bc)
-  set -l hrs (echo "scale=0;(($secs - ($days * 86000)) / 3600)" | bc)
-  set -l mins (echo "scale=0;(($secs - ($hrs * 3600)) / 60)" | bc)
+  set -l hrs (echo "scale=0;(($secs % 86400) / 3600)" | bc)
+  set -l mins (echo "scale=0;(($secs % 3600) / 60)" | bc)
   if test $secs -lt 60
     set uptime (echo "$secs seconds")
   else if test $secs -lt 3600
