@@ -1,7 +1,11 @@
 function __greeter_component_host
   set -l host (cat /etc/hostname)
 
-  __greeter_util_set greeter_host_space '                 '
+  if test greeter_kitty_available
+    __greeter_util_set greeter_host_space "     /  \        "
+    else
+    __greeter_util_set greeter_host_space "                 "
+  end
   __greeter_util_set greeter_host_icon_color "#878787"
   __greeter_util_set greeter_host_icon "󰠦 "
   __greeter_util_set greeter_host_text_color blue --bold

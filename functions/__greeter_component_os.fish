@@ -1,7 +1,11 @@
 function __greeter_component_os
   set -l os (cat /etc/os-release | head -n 1 | sed 's/NAME="\(.*\)"/\1/')
 
-  __greeter_util_set greeter_os_space "                 "
+if test greeter_kitty_available
+  __greeter_util_set greeter_os_space "      /\\         "
+else
+  __greeter_util_set greeter_os_space "                   "
+end
   __greeter_util_set greeter_os_icon_color "#878787"
   __greeter_util_set greeter_os_icon " "
   __greeter_util_set greeter_os_text_color blue --bold

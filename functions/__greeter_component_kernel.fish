@@ -1,7 +1,11 @@
 function __greeter_component_kernel
   set -l kernel (uname -sr)
 
-  __greeter_util_set greeter_kernel_space '                 '
+if test greeter_kitty_available
+  __greeter_util_set greeter_kernel_space "    /\\   \       "
+else
+  __greeter_util_set greeter_kernel_space "                  "
+end
   __greeter_util_set greeter_kernel_icon_color "#878787"
   __greeter_util_set greeter_kernel_icon "󰠰 "
   __greeter_util_set greeter_kernel_text_color blue --bold

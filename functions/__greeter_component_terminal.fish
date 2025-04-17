@@ -2,7 +2,11 @@ function __greeter_component_terminal
   set -l term $TERM
   set -l shell ($SHELL --version)
 
-  __greeter_util_set greeter_terminal_space '                 '
+if test greeter_kitty_available
+  __greeter_util_set greeter_terminal_space "   /   ,,   \    "
+else
+  __greeter_util_set greeter_terminal_space "                 "
+end
   __greeter_util_set greeter_terminal_icon_color "#878787"
   __greeter_util_set greeter_terminal_icon " "
   __greeter_util_set greeter_terminal_text_color blue --bold

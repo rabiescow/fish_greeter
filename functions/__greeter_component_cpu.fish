@@ -1,7 +1,11 @@
 function __greeter_component_cpu
   set -l cpu (cat /proc/cpuinfo | grep "model name" | head -n1 | sed 's/model name\s*:\s\(.*\)/\1/')
 
+if test greeter_kitty_available
+  __greeter_util_set greeter_cpu_space "  /   |  |  -\   "
+else
   __greeter_util_set greeter_cpu_space "                 "
+end
   __greeter_util_set greeter_cpu_icon_color "#878787"
   __greeter_util_set greeter_cpu_icon "󰻠 "
   __greeter_util_set greeter_cpu_text_color blue --bold

@@ -1,7 +1,11 @@
 function __greeter_component_cpumode
   set -l cpumode (cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
 
-  __greeter_util_set greeter_cpumode_space '                 '
+if test !greeter_kitty_available
+  __greeter_util_set greeter_cpumode_space " /_-''    ''-_\\  "
+else
+  __greeter_util_set greeter_cpumode_space "                 "
+end
   __greeter_util_set greeter_cpumode_icon_color "#878787"
   __greeter_util_set greeter_cpumode_icon "󰓅 "
   __greeter_util_set greeter_cpumode_text_color blue --bold
