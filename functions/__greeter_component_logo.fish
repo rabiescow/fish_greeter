@@ -6,8 +6,8 @@ function __greeter_component_logo
   if type -q convert
     kitty +kitten icat \
         --align left \
-        --use-window-size 10,10,200,200 \
-        --place 200x200@3x1 \
+        # --use-window-size 10,10,210,210 \
+        --place 150x150@3x1 \
         $greeter_logo_path
     __greeter_util_set greeter_kitty_available true
   else 

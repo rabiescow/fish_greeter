@@ -1,5 +1,5 @@
 function __greeter_component_line
-  __greeter_util_set greeter_line_space "                 "
+  __greeter_util_set greeter_line_space "                   "
   __greeter_util_set greeter_line_color green
   __greeter_util_set greeter_line "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 

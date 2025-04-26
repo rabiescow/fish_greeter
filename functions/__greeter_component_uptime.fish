@@ -14,20 +14,14 @@ function __greeter_component_uptime
     set uptime (echo "$days:$hrs:$mins (d:h:m)")
   end
 
-# if test greeter_kitty_available
-  # __greeter_util_set greeter_uptime_space "   /      \      "
-# else
-  __greeter_util_set greeter_uptime_space "                 "
-# end
-  __greeter_util_set greeter_uptime_space ''
-  __greeter_util_set greeter_uptime_space '                 '
+  __greeter_util_set greeter_uptime_space "                  "
   __greeter_util_set greeter_uptime_icon_color "#878787"
-  __greeter_util_set greeter_uptime_icon "󱇻 "
+  __greeter_util_set greeter_uptime_icon " 󱇻  "
   __greeter_util_set greeter_uptime_text_color blue --bold
   __greeter_util_set greeter_uptime_text "Uptime"
   __greeter_util_set greeter_uptime_text_suffix "  "
-  __greeter_util_set greeter_uptime_separator_color "#38D8C8"
-  __greeter_util_set greeter_uptime_separator " ➜ "
+  __greeter_util_set greeter_uptime_separator_color cyan
+  __greeter_util_set greeter_uptime_separator " ➜  "
   __greeter_util_set greeter_uptime_value_color "#878787"
   __greeter_util_set greeter_uptime_value $uptime
 

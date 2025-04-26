@@ -2,7 +2,7 @@ function __greeter_component_title
   set -l user (whoami)
   set -l host (cat /etc/hostname)
 
-  __greeter_util_set greeter_title_space "              "
+  __greeter_util_set greeter_title_space "                "
   __greeter_util_set greeter_title_user_color "#ededed" --bold
   __greeter_util_set greeter_title_user $user
   __greeter_util_set greeter_title_separator_color "#878787"
